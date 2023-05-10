@@ -124,20 +124,11 @@
                 aria-describedby="emailHelp"
               />
             </div>
-            <div class="mb-3">
+            <!-- <div class="mb-3">
               <label for="password" class="form-label">Password</label>
               <input type="password" class="form-control" id="password" />
-            </div>
-            <div class="mb-3 form-check">
-              <input
-                type="checkbox"
-                class="form-check-input"
-                id="exampleCheck1"
-              />
-              <label class="form-check-label" for="exampleCheck1"
-                >Check me out</label
-              >
-            </div>
+            </div> -->
+
             <button type="submit" class="btn btn-primary submitData">
               Submit
             </button>
@@ -171,6 +162,8 @@
                       id="btnEditar"
                       type="button"
                       class="btn btn-warning btn-sm"
+                      data-bs-toggle="modal"
+                      data-bs-target="#modalEdit"
                     >
                       Editar
                     </button>
@@ -195,7 +188,7 @@
           <template> </template>
           <div
             class="modal fade"
-            id="exampleModal"
+            id="modalEdit"
             tabindex="-1"
             aria-labelledby="exampleModalLabel"
             aria-hidden="true"
@@ -204,16 +197,60 @@
               <div class="modal-content">
                 <div class="modal-header">
                   <h1 class="modal-title fs-5" id="exampleModalLabel">
-                    Modal title
+                    Edit Person
                   </h1>
-                  <button
-                    type="button"
-                    class="btn-close"
-                    data-bs-dismiss="modal"
-                    aria-label="Close"
-                  ></button>
                 </div>
-                <div class="modal-body">...</div>
+                <div class="modal-body">
+                  <form id="form2" class="">
+                    <div class="mb-3">
+                      <label for="name2" class="form-label">Name</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="name2"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="lastname2" class="form-label">LastName</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="lastname2"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="phone2" class="form-label">Phone</label>
+                      <input
+                        type="phone"
+                        class="form-control"
+                        id="phone2"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="company2" class="form-label">Company</label>
+                      <input
+                        type="text"
+                        class="form-control"
+                        id="company2"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                    <div class="mb-3">
+                      <label for="email2" class="form-label"
+                        >Email address</label
+                      >
+                      <input
+                        type="email"
+                        class="form-control"
+                        id="email2"
+                        aria-describedby="emailHelp"
+                      />
+                    </div>
+                  </form>
+                </div>
                 <div class="modal-footer">
                   <button
                     type="button"
