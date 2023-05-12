@@ -162,8 +162,6 @@
                       id="btnEditar"
                       type="button"
                       class="btn btn-warning btn-sm"
-                      data-bs-toggle="modal"
-                      data-bs-target="#modalEdit"
                     >
                       Editar
                     </button>
@@ -182,90 +180,94 @@
           <!-- Table -->
 
           <!-- Modal Edit -->
-          <!-- Button trigger modal -->
-
-          <!-- Modal -->
-          <template> </template>
-          <div
-            class="modal fade"
-            id="modalEdit"
-            tabindex="-1"
-            aria-labelledby="exampleModalLabel"
-            aria-hidden="true"
-          >
-            <div class="modal-dialog">
-              <div class="modal-content">
-                <div class="modal-header">
-                  <h1 class="modal-title fs-5" id="exampleModalLabel">
-                    Edit Person
-                  </h1>
-                </div>
-                <div class="modal-body">
-                  <form id="form2" class="">
-                    <div class="mb-3">
-                      <label for="name2" class="form-label">Name</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="name2"
-                        aria-describedby="emailHelp"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label for="lastname2" class="form-label">LastName</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="lastname2"
-                        aria-describedby="emailHelp"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label for="phone2" class="form-label">Phone</label>
-                      <input
-                        type="phone"
-                        class="form-control"
-                        id="phone2"
-                        aria-describedby="emailHelp"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label for="company2" class="form-label">Company</label>
-                      <input
-                        type="text"
-                        class="form-control"
-                        id="company2"
-                        aria-describedby="emailHelp"
-                      />
-                    </div>
-                    <div class="mb-3">
-                      <label for="email2" class="form-label"
-                        >Email address</label
-                      >
-                      <input
-                        type="email"
-                        class="form-control"
-                        id="email2"
-                        aria-describedby="emailHelp"
-                      />
-                    </div>
-                  </form>
-                </div>
-                <div class="modal-footer">
-                  <button
-                    type="button"
-                    class="btn btn-secondary"
-                    data-bs-dismiss="modal"
-                  >
-                    Close
-                  </button>
-                  <button type="button" class="btn btn-primary">
-                    Save changes
-                  </button>
+          <template>
+            <div
+              class="modal fade"
+              id="modalEdit"
+              tabindex="-1"
+              aria-labelledby="exampleModalLabel"
+              aria-hidden="true"
+            >
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <h1 class="modal-title fs-5" id="exampleModalLabel">
+                      Edit Person
+                    </h1>
+                  </div>
+                  <div class="modal-body">
+                    <form id="form2" class="">
+                      <div class="mb-3">
+                        <label for="name2" class="form-label">Name</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="name2"
+                          aria-describedby="emailHelp"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="lastname2" class="form-label"
+                          >LastName</label
+                        >
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="lastname2"
+                          aria-describedby="emailHelp"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="phone2" class="form-label">Phone</label>
+                        <input
+                          type="phone"
+                          class="form-control"
+                          id="phone2"
+                          aria-describedby="emailHelp"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="company2" class="form-label">Company</label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="company2"
+                          aria-describedby="emailHelp"
+                        />
+                      </div>
+                      <div class="mb-3">
+                        <label for="email2" class="form-label"
+                          >Email address</label
+                        >
+                        <input
+                          type="email"
+                          class="form-control"
+                          id="email2"
+                          aria-describedby="emailHelp"
+                        />
+                      </div>
+                    </form>
+                  </div>
+                  <div class="modal-footer">
+                    <button
+                      type="button"
+                      class="btn btn-secondary"
+                      data-bs-dismiss="modal"
+                    >
+                      Close
+                    </button>
+                    <button
+                      id="btnSaveEdit"
+                      type="button"
+                      class="btn btn-primary saveChange"
+                    >
+                      Save changes
+                    </button>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
+          </template>
           <!-- Modal Edit-->
         </div>
       </div>

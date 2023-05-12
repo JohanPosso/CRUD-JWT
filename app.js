@@ -6,6 +6,8 @@ const tablebody = document.getElementById("tablebody");
 const form = document.querySelector("#form");
 const submitData = document.querySelector(".submitData");
 const fragment = document.createDocumentFragment();
+const btnSaveEdit = document.getElementById("btnSaveEdit");
+const btnEditar = document.getElementById("btnEditar");
 
 // Variable Form
 const name = document.getElementById("name");
@@ -13,6 +15,16 @@ const lastname = document.getElementById("lastname");
 const phone = document.getElementById("phone");
 const company = document.getElementById("company");
 const email = document.getElementById("email");
+
+// Regular Expression
+
+const expression = {
+  usuario: /^[a-zA-Z0-9\_\-]{4,16}$/, // Letras, numeros, guion y guion_bajo
+  nombre: /^[a-zA-ZÀ-ÿ\s]{1,40}$/, // Letras y espacios, pueden llevar acentos.
+  password: /^.{4,12}$/, // 4 a 12 digitos.
+  correo: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+  telefono: /^\d{7,14}$/, // 7 a 14 numeros.
+};
 
 tablebody.addEventListener("click", (e) => {
   eliminarData(e);
@@ -30,21 +42,26 @@ form.addEventListener("submit", (e) => {
       email: email.value,
     },
   ];
+  // Validation empty field
+  if (!name.value == "" || !lastname.value == "") {
+    containerData.push(...person);
+    console.log("Hola");
+  }
 
-  containerData.push(...person);
-
-  pintarCards();
+  showData();
 
   e.stopPropagation();
   e.preventDefault();
   form.reset();
 });
 
-const pintarCards = () => {
+const showData = () => {
   while (tablebody.firstChild) {
     tablebody.removeChild(tablebody.firstChild);
   }
   let id = 0;
+  const regex = /^[0-9]\d*$/;
+
   containerData.forEach((item) => {
     id++;
 
@@ -57,12 +74,12 @@ const pintarCards = () => {
     templateElement.querySelector("#phoneElement").textContent = item.phone;
     templateElement.querySelector("#companyElement").textContent = item.company;
     templateElement.querySelector("#emailElement").textContent = item.email;
+
     const clone = templateElement.cloneNode(true);
     fragment.appendChild(clone);
   });
 
   tablebody.appendChild(fragment);
-  console.log(containerData);
 };
 
 const eliminarData = (e) => {
@@ -73,10 +90,10 @@ const eliminarData = (e) => {
     ); //Busca un elemento con esa condicion
     const positionElement = containerData.indexOf(findElement); // Encuentra la posicion de ese elemento
     containerData.splice(positionElement, 1); // Elimina el elemento en el array
-    console.log(containerData);
   }
 };
 
+// Pending
 const editarData = (e) => {
   if (e.target.classList.contains("btn-warning")) {
     const findElement = containerData.find(
@@ -84,11 +101,11 @@ const editarData = (e) => {
     );
 
     if (e.target.dataset.id == findElement.id) {
-      document.getElementById("name2").value = findElement.name;
-      document.getElementById("lastname2").value = findElement.lastname;
-      document.getElementById("phone2").value = findElement.phone;
-      document.getElementById("company2").value = findElement.company;
-      document.getElementById("email2").value = findElement.email;
+      name.value = findElement.name;
+      lastname.value = findElement.lastname;
+      phone.value = findElement.phone;
+      company.value = findElement.company;
+      email.value = findElement.email;
     }
   }
 };
